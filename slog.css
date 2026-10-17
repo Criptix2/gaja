@@ -1,0 +1,73 @@
+/* Gajina osebna stran – skupni slog (iste barve kot CV) */
+:root {
+  --akcent: #1d4e5a;
+  --akcent-temna: #163d47;
+  --akcent-svetla: #e9f1f2;
+  --topla: #c48a5c;
+  --topla-svetla: #f7ede4;
+  --besedilo: #22292d;
+  --sivo: #5d6a70;
+  --ozadje: #fbfaf8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 17px; line-height: 1.6; color: var(--besedilo); background: var(--ozadje);
+}
+a { color: var(--akcent); }
+.ovoj { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* glava */
+.glava { background: var(--akcent); color: #fff; padding: 40px 0 32px; border-bottom: 5px solid var(--topla); }
+.glava .ovoj { display: flex; gap: 24px; align-items: center; }
+.foto { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; flex: none;
+        border: 4px solid rgba(255,255,255,.2); }
+.za { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #e2b893; font-weight: 600; }
+h1 { font-size: 34px; font-weight: 300; line-height: 1.1; }
+h1 b { font-weight: 700; }
+.podnaslov { color: #e2b893; font-weight: 600; margin-top: 4px; }
+.kraj { color: #cfe0e2; font-size: 15px; margin-top: 2px; }
+
+/* razdelki */
+section { padding: 30px 0 4px; }
+h2 { font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--akcent);
+     margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+h2::after { content: ""; flex: 1; height: 1px; background: #cfdcde; }
+p + p { margin-top: 10px; }
+
+.video { position: relative; padding-top: 56.25%; border-radius: 12px; overflow: hidden; background: #000; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.kartice { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.kartica { background: #fff; border: 1px solid #dbe5e6; border-top: 4px solid var(--akcent); border-radius: 10px; padding: 16px 18px; }
+.kartica b { display: block; color: var(--akcent); margin-bottom: 4px; }
+.kartica span { font-size: 15px; color: var(--sivo); }
+
+.poudarek { background: var(--akcent-svetla); border-left: 5px solid var(--topla); border-radius: 0 10px 10px 0; padding: 16px 20px; }
+
+.pot { list-style: none; border-left: 2px solid #cfdcde; margin-left: 6px; }
+.pot li { position: relative; padding: 0 0 16px 22px; }
+.pot li::before { content: ""; position: absolute; left: -7px; top: 7px; width: 12px; height: 12px; border-radius: 50%;
+                  background: var(--topla); border: 2px solid var(--ozadje); }
+.pot b { display: block; }
+.pot .kje { color: var(--sivo); font-size: 15px; }
+
+.znacke { display: flex; flex-wrap: wrap; gap: 8px; }
+.znacke span { background: #fff; border: 1px solid #cfdcde; border-radius: 999px; padding: 4px 13px; font-size: 15px; }
+
+.gumb { display: inline-block; background: var(--akcent); color: #fff; text-decoration: none; font-weight: 600;
+        padding: 13px 24px; border-radius: 10px; margin: 4px 8px 4px 0; }
+.gumb.drugi { background: #fff; color: var(--akcent); border: 2px solid var(--akcent); }
+.gumb:hover { background: var(--akcent-temna); color: #fff; }
+
+.izdelek img { width: 100%; border-radius: 8px; border: 1px solid #dbe5e6; box-shadow: 0 6px 24px rgba(29,78,90,.12); }
+
+footer { color: var(--sivo); font-size: 14px; padding: 36px 0 40px; text-align: center; }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .glava { padding: 28px 0 24px; }
+  .glava .ovoj { flex-direction: column; text-align: center; gap: 14px; }
+  h1 { font-size: 30px; }
+}
